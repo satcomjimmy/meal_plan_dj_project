@@ -1,0 +1,20 @@
+{% extends 'meal_plan/base.html' %}
+
+{% block content %}
+
+<h1>Dishes</h1>
+<hr />
+<ul>
+{% for object in dish_list %}
+<a style="margin: 0; padding: 0;" href="{% url 'meal_plan:dish_detail' object.pk %}"> {{ object }} - {{ object.status }}</a>
+
+    <hr />
+{% empty %}
+    <li>You have no dishes in your meal plan.</li>
+{% endfor %}
+</ul>
+
+<a class="btn btn-primary btn-md mt-1"
+    href="{% url 'meal_plan:dish_create' %}">Add a Dish</a>
+
+{% endblock content %}

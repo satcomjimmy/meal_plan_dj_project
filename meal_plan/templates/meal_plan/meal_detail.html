@@ -1,0 +1,25 @@
+{% extends 'meal_plan/base.html' %}
+
+{% block content %}
+
+{% comment %} <head>
+    <title>Meal Details</title>
+</head> {% endcomment %}
+<body>
+    <span> Meal Name: {{ object.name }}</span><br />
+    <span> Status: {{ object.status }}</span><br />
+    <span> Dishes: </span><br />
+    <ul>
+        {% for dish in object.dishes.all %}
+            <li><a style="margin: 0; padding: 0;" href="{% url 'meal_plan:dish_detail' dish.pk %}"> {{ dish }}</a></li>
+        {% empty %}
+            <li>No dishes have been added to this meal yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+
+<br />
+<a class="btn btn-primary btn-md mt-1"
+href="{% url 'meal_plan:meal_update' object.id %}">Edit</a>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "meal_plan/base.html" %}
+
+{% block page_header %}
+    <div class="p-3 mb-4 bg-light border rounded-3">
+        <div class="container-fluid py-4">
+            <h1 class="display-3">Plan your meals.</h1>
+            <p class="lead">Make your Meal Plan, and keep a list of the
+            dishes and meals you like.</p>
+            {% if user.is_authenticated %}
+            <a class="btn btn-primary btn-md mt-1"
+                href="{% url 'meal_plan:grocery_create' %}">Add a Grocery Item to the List &raquo;</a></br>
+            <a class="btn btn-primary btn-md mt-1"
+                href="{% url 'meal_plan:dish_create' %}">Add a Dish to the Meal Plan &raquo;</a></br>
+            <a class="btn btn-primary btn-md mt-1"
+                href="{% url 'meal_plan:meal_create' %}">Add a Meal to the Meal Plan &raquo;</a></br>
+            {% else %}
+            <a class="btn btn-primary btn-lg mt-1"
+                href="{% url 'accounts:register' %}">Register &raquo;</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+    <p>Meal Plan helps you keep track of your meals, groceries and leftovers..</p>
+{% endblock content %}

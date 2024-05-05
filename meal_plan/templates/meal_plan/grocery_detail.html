@@ -1,0 +1,28 @@
+{% extends 'meal_plan/base.html' %}
+
+{% block content %}
+
+{% comment %} <head>
+    <title>Grocery Item Details</title>
+</head> {% endcomment %}
+<body>
+    <span> Item Name: {{ object.name }}</span><br />
+    <span> Quantity: {{ object.qty_needed }}</span><br />
+    <span> When Needed: {{ object.when_needed }}</span><br />
+    <span> Item Type: {{ object.type }}</span><br />
+    <span> Status: {{ object.status }}</span><br />
+    {% comment %} <span> Ingredient for Dishes: </span><br />
+    <ul>
+        {% for ingredient in object.ingredients.all %}
+            <li>{{ ingredient.name }}</li>
+        {% empty %}
+            <li>Not an ingredient for any dishes.</li>
+        {% endfor %} {% endcomment %}
+    </ul>
+</body>
+
+<br />
+<a class="btn btn-primary btn-md mt-1"
+href="{% url 'meal_plan:grocery_update' object.id %}">Edit</a>
+
+{% endblock content %}

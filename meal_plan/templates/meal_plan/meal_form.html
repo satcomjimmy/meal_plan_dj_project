@@ -1,0 +1,18 @@
+{% extends 'meal_plan/base.html' %}
+
+{% block content %}
+
+<html>
+    <head>
+        <title>Add a Meal</title>
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save Meal" />
+        </form>
+    </body>
+</html>
+
+{% endblock content %}

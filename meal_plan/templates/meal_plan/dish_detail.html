@@ -1,0 +1,27 @@
+{% extends 'meal_plan/base.html' %}
+
+{% block page_header %}
+<p>Dish Details</p>
+{% endblock page_header %}
+
+{% block content %}
+
+<body>
+  <span> Dish Name: {{ object.name }}</span><br />
+  <span> Status: {{ object.status }}</span><br />
+  <span> Recipe: {{ object.recipe }}</span><br />
+  {% comment %} <span> Ingredients Needed: {{ object.ingredients.all }}</span><br /> {% endcomment %}
+  <span> Ingredient(s) Needed for Dish: </span><br />
+  <ul>
+    {% for ingredient in object.ingredients.all %}
+        <li><a style="margin: 0; padding: 0;" href="{% url 'meal_plan:grocery_detail' ingredient.pk %}"> {{ ingredient }}</a></li>
+    {% empty %}
+        <li>No groceries needed for this dish.</li>
+    {% endfor %}
+</body>
+
+<br />
+<a class="btn btn-primary btn-md mt-1"
+href="{% url 'meal_plan:dish_update' object.id %}">Edit</a>
+
+{% endblock content %}
