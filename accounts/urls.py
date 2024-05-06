@@ -12,5 +12,5 @@ urlpatterns = [
     # Registration page.
     path('register/', views.register, name='register'),
     # Login page for decorator
-    path("login/", auth_views.LoginView.as_view(), name='login'),
+    path("login/", auth_views.LoginView.as_view()),
 ]
