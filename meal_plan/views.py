@@ -182,7 +182,7 @@ class GroceryDeleteView(LoginRequiredMixin, DeleteView):
 
 
 # Leftover Views
-class LeftoverListView(LoginRequiredMixin, ListView):
+class LeftoverListView(ListView):
     model = Dish
     context_object_name = 'leftover'
     queryset = Dish.objects.filter(status__icontains="leftover")
