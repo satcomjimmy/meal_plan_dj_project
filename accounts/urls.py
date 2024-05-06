@@ -1,7 +1,7 @@
 """Defines URL patterns for accounts."""
 
 from django.urls import path, include
-from django.contrib.auth import views as auth_views
+# from django.contrib.auth import views as auth_views
 
 from . import views
 
@@ -12,5 +12,6 @@ urlpatterns = [
     # Registration page.
     path('register/', views.register, name='register'),
     # Login page for decorator
-    path("login/", auth_views.LoginView.as_view()),
+    # path("login/", auth_views.LoginView.as_view()),
+    path("login/", views.register, name='login'),
 ]
