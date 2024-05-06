@@ -179,3 +179,11 @@ class GroceryDeleteView(LoginRequiredMixin, DeleteView):
     model = Grocery
     template_name = 'meal_plan/grocery_delete_form.html'
     success_url = '/meal_plan/delete_success'
+
+
+# Leftover Views
+class LeftoverListView(LoginRequiredMixin, ListView):
+    model = Dish
+    context_object_name = 'leftover'
+    queryset = Dish.objects.filter(status__icontains="leftover")
+    template_name = 'meal_plan/leftover_list.html'

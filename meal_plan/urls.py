@@ -22,9 +22,9 @@ urlpatterns = [
     # path('', views.DishFormView.as_view(), name='dish_form'),
     path('', views.index, name='index'),
     path('index/', views.index, name='index'),
-    path('dishes/', views.DishListView.as_view(), name='dish_list'),
     path('entry_success', views.FormSuccessView.as_view(), name='form_success'),
     path('delete_success', views.DeleteSuccessView.as_view(), name='delete_success'),
+    path('dishes/', views.DishListView.as_view(), name='dish_list'),
     path('dish_create/', views.DishCreateView.as_view(), name='dish_create'),
     path('dish_detail/<int:pk>', views.DishDetailView.as_view(), name='dish_detail'),
     path('dish_update/<int:pk>', views.DishUpdateView.as_view(), name='dish_update'),
@@ -39,5 +39,5 @@ urlpatterns = [
     path('grocery_detail/<int:pk>', views.GroceryDetailView.as_view(), name='grocery_detail'),
     path('grocery_update/<int:pk>', views.GroceryUpdateView.as_view(), name='grocery_update'),
     path('grocery_delete/<int:pk>', views.GroceryDeleteView.as_view(), name='grocery_delete'),
-
+    path('leftovers/', views.LeftoverListView.as_view(), name='leftover_list'),
 ]

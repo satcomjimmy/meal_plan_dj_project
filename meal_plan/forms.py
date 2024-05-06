@@ -38,3 +38,13 @@ class GroceryForm(forms.ModelForm):
         # widgets = {
         #     'when_needed' : DatePickerInput(),
         # }
+
+# class LeftoverForm(forms.ModelForm):
+    
+#     leftover_dish = 
+
+#     class Meta:
+#         model = Dish
+#         fields = [
+#             'leftover_dish',
+#         ]

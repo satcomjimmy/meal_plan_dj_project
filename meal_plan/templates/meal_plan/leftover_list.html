@@ -1,0 +1,21 @@
+{% extends 'meal_plan/base.html' %}
+
+{% block content %}
+
+<h1>Leftover Dishes</h1>
+<hr />
+<ul>
+{% for object in leftover %}
+{% comment %} {% if object.status = 'leftover' %} {% endcomment %}
+<a style="margin: 0; padding: 0;" href="{% url 'meal_plan:dish_detail' object.pk %}"> {{ object }}</a>
+
+    <hr />
+{% empty %}
+    <li>You have no Leftovers!</li>
+{% endfor %}
+</ul>
+
+{% comment %} <a class="btn btn-primary btn-md mt-1"
+    href="{% url 'meal_plan:dish_create' %}">Add a Dish</a> {% endcomment %}
+
+{% endblock content %}
