@@ -25,6 +25,7 @@ class FormSuccessView(View):
     
 
 class DeleteSuccessView(View):
+    print("called delete success view")
     def get(self, request, *args, **kwargs):
         return HttpResponse("You have successfully deleted this item.")
     
@@ -70,7 +71,7 @@ class DishUpdateView(LoginRequiredMixin, UpdateView):
 class DishDeleteView(LoginRequiredMixin, DeleteView):
     model = Dish
     template_name = 'meal_plan/dish_delete_form.html'
-    success_url = '/meal_plan/delete_success'
+    success_url = '/delete_success'
 
 # Meal views
 class MealFormView(LoginRequiredMixin, FormView):
@@ -119,7 +120,7 @@ class MealUpdateView(LoginRequiredMixin, UpdateView):
 class MealDeleteView(LoginRequiredMixin, DeleteView):
     model = Meal
     template_name = 'meal_plan/meal_delete_form.html'
-    success_url = '/meal_plan/delete_success'
+    success_url = '/delete_success'
 
 
 # Grocery views
@@ -178,7 +179,7 @@ class GroceryUpdateView(LoginRequiredMixin, UpdateView):
 class GroceryDeleteView(LoginRequiredMixin, DeleteView):
     model = Grocery
     template_name = 'meal_plan/grocery_delete_form.html'
-    success_url = '/meal_plan/delete_success'
+    success_url = '/delete_success'
 
 
 # Leftover Views

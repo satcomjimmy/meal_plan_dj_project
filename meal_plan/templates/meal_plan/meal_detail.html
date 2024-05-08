@@ -19,7 +19,9 @@
 </body>
 
 <br />
-<a class="btn btn-primary btn-md mt-1"
+<a class="btn btn-success btn-md mt-1"
 href="{% url 'meal_plan:meal_update' object.id %}">Edit</a>
+<a class="btn btn-warning btn-md mt-1"
+href="{% url 'meal_plan:meal_delete' object.id %}">Delete</a>
 
 {% endblock content %}
